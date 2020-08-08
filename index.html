@@ -543,6 +543,7 @@
                 <input
                   class="follow-us-form"
                   type="text"
+                  name="user-email"
                   placeholder="E-mail"
                 />
                 <button class="follow-us-btn" type="submit">
@@ -570,6 +571,7 @@
             class="modal-form-input"
             type="text"
             id="name"
+            name="user-name"
             placeholder=" "
           />
           <label class="modal-label" for="name">Имя</label>
@@ -582,6 +584,7 @@
             class="modal-form-input"
             type="text"
             id="tel"
+            name="user-tel"
             placeholder=" "
           />
           <label class="modal-label" for="tel">Телефон</label>
@@ -594,6 +597,7 @@
             class="modal-form-input"
             type="text"
             id="email"
+            name="user-email"
             placeholder=" "
           />
           <label class="modal-label" for="email">Почта</label>
@@ -604,19 +608,33 @@
 
         <textarea
           class="modal-form-textarea"
-          name=""
           id=""
+          name="user-message"
           placeholder="Комментарий"
         ></textarea>
-        <input type="checkbox" />
-        <button type="button" class="close-btn" data-modal-close>
-          <svg class="modal-form-icon-close">
-            <use href="./image/sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-        <p>
-          Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a>
-        </p>
+        <div class="modal-checkbox-container">
+          <label class="test" for="checkbox">
+            <input
+              class="modal-form-checkbox"
+              type="checkbox"
+              id="checkbox"
+              name="policy"
+              value="accept-policy"
+            /><span class="modal-form-checkbox-title">
+              Соглашаюсь с рассылкой и принимаю
+              <a class="modal-form-title-link" href="#">Условия договора</a>
+            </span>
+            <svg class="modal-custom-checkbox">
+              <use href="./image/sprite.svg#icon-check"></use>
+            </svg>
+          </label>
+        </div>
+        <button class="modal-btn-submit">Отправить</button>
+
+        <button type="button" class="close-btn"></button>
+        <svg data-modal-close class="modal-form-icon-close">
+          <use href="./image/sprite.svg#icon-close"></use>
+        </svg>
       </form>
     </div>
     <script src="./js/modal.js"></script>
