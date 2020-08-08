@@ -980,8 +980,14 @@ body {
   transform: translateY(-100%);
   opacity: 1;
 }
-
-.modal {
+.is-hidden {
+  opacity: 0;
+  transform: scale(1.1);
+  pointer-events: none;
+  transition: transform 250ms var(--defaul-cubic-bezier),
+    opacity 250ms var(--defaul-cubic-bezier);
+}
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -989,10 +995,119 @@ body {
   height: 100%;
   z-index: 100;
   background: rgba(0, 0, 0, 0.2);
+  transition: transform 250ms var(--defaul-cubic-bezier),
+    opacity 250ms var(--defaul-cubic-bezier);
 }
 .modal-form {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 528px;
+
   background-color: #ffffff;
+}
+.modal-form-title {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 0.87;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+.modal-form-input {
+  position: relative;
+  height: 40px;
+  width: 448px;
+}
+.modal-form-input,
+.modal-form-textarea {
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-form-input:not(:placeholder-shown),
+.modal-form-input:focus,
+.modal-form-textarea:not(:placeholder-shown),
+.modal-form-textarea:focus {
+  outline-color: var(--accent-color);
+}
+.modal-form-textarea {
+  padding-left: 16px;
+  padding-top: 12px;
+  width: 448px;
+  height: 120px;
+  resize: none;
+}
+
+.modal-form-icon-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-form-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 28px;
+}
+.modal-label {
+  display: flex;
+  position: absolute;
+  padding-left: 42px;
+}
+.close-btn {
+  border: none;
+}
+/* @keyframes AnimationLabel {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+/* .modal-lable:not(:placeholder-shown) {
+} */
+/* .modal-form-input:focus + .modal-lable, */
+.modal-form-input:not(:placeholder-shown) + .modal-label {
+  color: var(--accent-color);
+  transition: transform 250ms var(--defaul-cubic-bezier),
+    color 250ms var(--defaul-cubic-bezier);
+  transform: translate(-40%, -150%);
+}
+
+.modal-form-input + .modal-label {
+  transition: transform 250ms var(--defaul-cubic-bezier),
+    color 250ms var(--defaul-cubic-bezier);
+  transform: translate(0%, 0%);
+}
+.modal-form-icon-svg {
+  position: absolute;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  fill: var(--title-text-color);
+  transition: fill 250ms var(--defaul-cubic-bezier);
+}
+.modal-form-input:not(:placeholder-shown) ~ .modal-form-icon-svg {
+  fill: var(--accent-color);
+  transition: fill 250ms var(--defaul-cubic-bezier);
 }

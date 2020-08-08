@@ -84,7 +84,7 @@
           для вашего бизнеса
         </h1>
 
-        <button class="services-btn general-btn" type="button">
+        <button data-modal-open class="services-btn general-btn" type="button">
           Заказать услугу
         </button>
       </section>
@@ -557,14 +557,63 @@
         </div>
       </div>
     </footer>
-    <div class="modal">
+    <div class="backdrop is-hidden" data-modal>
       <form action="" class="modal-form">
-        <h3>Оставьте свои данные, мы вам перезвоним</h3>
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <textarea name="" id=""></textarea>
+        <!-- <svg class="modal-form-icon-close">
+          <use href="./image/sprite.svg#icon-close"></use>
+        </svg> -->
+        <h3 class="modal-form-title">
+          Оставьте свои данные, мы вам перезвоним
+        </h3>
+        <div class="modal-form-container">
+          <input
+            class="modal-form-input"
+            type="text"
+            id="name"
+            placeholder=" "
+          />
+          <label class="modal-label" for="name">Имя</label>
+          <svg class="modal-form-icon-svg">
+            <use href="./image/sprite.svg#icon-name"></use>
+          </svg>
+        </div>
+        <div class="modal-form-container">
+          <input
+            class="modal-form-input"
+            type="text"
+            id="tel"
+            placeholder=" "
+          />
+          <label class="modal-label" for="tel">Телефон</label>
+          <svg class="modal-form-icon-svg">
+            <use href="./image/sprite.svg#icon-tel"></use>
+          </svg>
+        </div>
+        <div class="modal-form-container">
+          <input
+            class="modal-form-input"
+            type="text"
+            id="email"
+            placeholder=" "
+          />
+          <label class="modal-label" for="email">Почта</label>
+          <svg class="modal-form-icon-svg">
+            <use href="./image/sprite.svg#icon-email"></use>
+          </svg>
+        </div>
+
+        <textarea
+          class="modal-form-textarea"
+          name=""
+          id=""
+          placeholder="Комментарий"
+        ></textarea>
         <input type="checkbox" />
+        <button type="button" class="close-btn" data-modal-close>
+          <svg class="modal-form-icon-close">
+            <use href="./image/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
         <p>
           Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a>
         </p>
