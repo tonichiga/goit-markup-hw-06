@@ -206,13 +206,8 @@ body {
 /* Герой */
 
 .hero {
-  position: relative;
-  max-width: 1600px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  /* padding-top: 200px; */
-  /* padding-bottom: 200px; */
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.8),
@@ -223,12 +218,7 @@ body {
 }
 
 .hero .hero-title {
-  position: absolute;
-  top: 200px;
-  left: 50%;
   margin-bottom: 30px;
-  /* padding-top: 200px;
-  padding-bottom: 200px; */
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -239,7 +229,6 @@ body {
   margin-top: 0px;
 
   animation-name: heroAction, heroActionOpacity;
-  transform: translateX(-50%);
   animation-duration: 1500ms;
   animation-timing-function: var(--defaul-cubic-bezier);
 }
@@ -261,15 +250,12 @@ body {
 }
 
 .services-btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .general-btn {
-  position: absolute;
-  top: 350px;
-  left: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -283,7 +269,7 @@ body {
   background-color: var(--accent-color);
   color: var(--second-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+
   border-radius: 4px;
   border: none;
 
@@ -291,7 +277,6 @@ body {
   animation-timing-function: var(--defaul-cubic-bezier);
   animation-duration: 3000ms;
   animation-direction: alternate;
-  transform: translateX(-50%);
 }
 @keyframes heroAcrionButton {
   0% {
@@ -1078,7 +1063,14 @@ body {
   margin-bottom: 28px;
 }
 .modal-label {
-  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.86;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+  /* display: flex; */
   position: absolute;
   padding-left: 42px;
 }
@@ -1111,7 +1103,7 @@ body {
   color: var(--accent-color);
   transition: transform 250ms var(--defaul-cubic-bezier),
     color 250ms var(--defaul-cubic-bezier);
-  transform: translate(-40%, -150%);
+  transform: translate(-40%, -300%);
 }
 
 .modal-form-input + .modal-label {
