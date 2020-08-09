@@ -812,7 +812,7 @@ body {
 
 .follow-us-btn::after {
   content: "";
-  background-image: url(../image/icon-send1.svg);
+  background-image: url(../image/icon-send.svg);
   background-repeat: no-repeat;
   fill: white;
   width: 24px;
